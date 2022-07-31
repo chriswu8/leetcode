@@ -1,7 +1,9 @@
 package question1.leetcode.wu;
 
 /**
- * TwoSum is LeetCode question 1.
+ * Chris Wu's solution to the TwoSum LeetCode question.
+ * @author Chris Wu
+ * @version 1.0
  */
 public class TwoSum
 {
