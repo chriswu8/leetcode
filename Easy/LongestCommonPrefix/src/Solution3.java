@@ -1,3 +1,14 @@
+/*
+In the worst case we have n equal strings with length m
+
+Time complexity : O(S*log m), where S is the sum of all characters in all strings.
+
+The algorithm makes log(m) iterations, for each of them there are S=m⋅n comparisons, which gives in total
+O(S⋅logm) time complexity.
+
+Space complexity : O(1)
+ */
+
 public class Solution3
 {
     public String longestCommonPrefix(String[] strs)
@@ -10,18 +21,19 @@ public class Solution3
     }
 
     private String longestCommonPrefix(String[] strs,
-                                       int l,
-                                       int r)
+                                       int leftMostIndex,
+                                       int rightMostIndex)
     {
-        if(l == r) // if the String[] only has one element (base case)
+        if(leftMostIndex == rightMostIndex) // if the String[] only has one element (base case)
         {
-            return strs[l]; // return that one element
+            return strs[leftMostIndex]; // return that one element
         }
         else
         {
-            int    mid      = (l + r) / 2;
-            String lcpLeft  = longestCommonPrefix(strs, l, mid);
-            String lcpRight = longestCommonPrefix(strs, mid + 1, r);
+            int    mid      = (leftMostIndex + rightMostIndex) / 2;
+            String lcpLeft  = longestCommonPrefix(strs, leftMostIndex, mid);
+            String lcpRight = longestCommonPrefix(strs, mid + 1, rightMostIndex);
+
             return commonPrefix(lcpLeft, lcpRight);
         }
     }
@@ -30,14 +42,17 @@ public class Solution3
                         String right)
     {
         int min = Math.min(left.length(), right.length());
+
         for(int i = 0; i < min; i++)
         {
             if(left.charAt(i) != right.charAt(i))
             {
-                return left.substring(0, i);
+                // return up to the previous matching character
+                return right.substring(0, i);
             }
         }
-        return left.substring(0, min);
+        // return the shorter string
+        return right.substring(0, min);
     }
 
     public static void main(String[] args)
