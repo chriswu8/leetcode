@@ -1,4 +1,4 @@
-public class Solution2
+public class Solution
 {
     public int strStr(final String haystack,
                       final String needle)
@@ -34,7 +34,7 @@ public class Solution2
 
     public static void main(final String[] args)
     {
-        Solution2 obj = new Solution2();
+        Solution obj = new Solution();
         System.out.println(obj.strStr("hello", "ll"));  // should output 2
         System.out.println(obj.strStr("aaaaa", "bba")); // should output -1
         System.out.println(obj.strStr("a", "a")); // should output 0
