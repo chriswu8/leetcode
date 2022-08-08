@@ -37,11 +37,6 @@ public class PlusOne
         int[] newArr;
         newArr = new int[digits.length + 1];
         newArr[0] = 1;
-
-        for(int i = 1; i < newArr.length; i++)
-        {
-            newArr[i] = 0;
-        }
         return newArr;
     }
 
@@ -52,12 +47,11 @@ public class PlusOne
         int[]   arr;
 
         obj = new PlusOne();
-        arr = new int[]{ 9, 9, 9};
+        arr = new int[]{ 9,9,9,9,9, 9, 9};
 
         for(int i : obj.plusOne(arr))
         {
             System.out.println(i);
         }
-
     }
 }
