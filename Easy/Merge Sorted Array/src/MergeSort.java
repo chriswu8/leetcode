@@ -1,4 +1,4 @@
-// Merge sort in Java
+// Merge sort practice
 
 class MergeSort
 {
@@ -59,7 +59,7 @@ class MergeSort
             }
             index++;
         }
-
+        // arraycopy(Object src, int srcPos, Object dest, int destPos, int length)
         if(leftPointer > leftEnd)
         {
             System.arraycopy(arr, rightPointer, temp, index, rightEnd - rightPointer + 1);
