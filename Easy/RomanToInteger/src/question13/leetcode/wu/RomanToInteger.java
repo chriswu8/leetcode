@@ -141,6 +141,6 @@ public class RomanToInteger
 
         obj = new RomanToInteger();
 
-        System.out.println(obj.romanToInt("III"));
+        System.out.println(obj.romanToInt("VVV"));
     }
 }
